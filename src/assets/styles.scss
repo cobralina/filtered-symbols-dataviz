@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,500&display=swap");
+
+$font-family-default: "Source Sans 3", Helvetica, Arial, serif;
+$font-family-head:"Source Sans 4", "Times New Roman", Times, serif;
+$color-default-dark:#212529;
+$color-default-grey:#999;
+$color-default-light:#e9e9e9;
+$color-default-orange:#f15e24;
+
+@mixin background-icon ($svgcode) {
+  background-image: url($svgcode);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+}
+
+@mixin dropdown-icon-white () {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='5 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.5264 7.96998C19.8193 8.26287 19.8193 8.73774 19.5264 9.03064L12.5264 16.0306C12.2335 16.3235 11.7587 16.3235 11.4658 16.0306L4.46576 9.03064C4.17287 8.73774 4.17287 8.26287 4.46576 7.96998C4.75866 7.67708 5.23353 7.67708 5.52642 7.96998L11.9961 14.4396L18.4658 7.96998C18.7587 7.67708 19.2335 7.67708 19.5264 7.96998Z' fill='%23E9E9E9'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+@mixin dropdown-icon-grey () {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='5 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.5264 7.96998C19.8193 8.26287 19.8193 8.73774 19.5264 9.03064L12.5264 16.0306C12.2335 16.3235 11.7587 16.3235 11.4658 16.0306L4.46576 9.03064C4.17287 8.73774 4.17287 8.26287 4.46576 7.96998C4.75866 7.67708 5.23353 7.67708 5.52642 7.96998L11.9961 14.4396L18.4658 7.96998C18.7587 7.67708 19.2335 7.67708 19.5264 7.96998Z' fill='%23212529'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+#femizide{
+  background-color: $color-default-dark;
+  color:$color-default-light;
+  font-family: $font-family-default;
+  padding:10px;
+
+  h1{
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+  }
+  .vue-list {
+    list-style:none;
+  }
+  #femizide-icons {
+    font-family: $font-family-default;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $color-default-dark;
+    background-color: $color-default-dark;
+    width:95%;
+    //padding-right:20px;
+    overflow:visible;
+  }
+  
+  .fem-icon{
+    cursor:pointer;
+  }
+  
+  .fem-intro{
+    text-align:center;
+    margin:0 auto;
+  }
+
+  .fem-filter{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    visibility: hidden;
+    height:1px;
+    overflow:hidden;
+  }
+
+  .fem-filter-button{
+    border-style: solid;
+    border-color: $color-default-light;
+    border-width: 0px 0px 1px 0px;
+    padding-bottom: 4px;
+    margin:5px;
+    &:hover {
+      color: $color-default-orange;
+      border-color: $color-default-orange;
+      cursor:pointer;
+   }
+  }
+
+  .fem-select{
+    width:400px;
+    margin: 0 auto;
+    @media (max-width: 580px) {
+      width:100%;      
+    }
+    
+  }
+
+  select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 10px;
+      font-size:14px;
+      color:$color-default-orange;
+      border: 1px solid $color-default-grey;
+      border-radius:2px;
+      background-color: $color-default-dark;
+      width:100%;
+      margin-bottom:10px;
+      font-weight: 600;
+      @include dropdown-icon-white();
+      &:hover {
+        background-color: $color-default-light;
+        @include dropdown-icon-grey();
+      }
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .active {
+    color: $color-default-orange;
+    border-color: $color-default-orange;
+  }
+}
+
+  .layer-text {
+    text-align:left;
+    line-height: 19px;
+  }
+
+  .chart-headline{
+    font-weight:bold;
+    text-align:left;
+    font-size: 18px;
+    line-height:20px;
+    margin-bottom:5px;
+    @media (max-width: 580px) {
+      font-size:18px;
+    }
+  }
+
+  .chart-subline{
+    font-size:14px;
+    line-height:16px;
+    text-align:left;
+  }
+
+button {
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 2px solid $color-default-grey;
+  color: #ffffff;
+  padding:8px;
+  margin-bottom:5px;
+  width:1px;
+  height:1px;
+}
+
+.chart-source {
+  color:$color-default-grey;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: right;
+}
+
+.info-button {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 2px solid $color-default-grey;
+  color: #ffffff;
+  padding:8px;
+  margin-bottom:5px;
+  width:1px;
+  height:1px;
+  cursor: pointer;
+  @include background-icon('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="-11 -4 26 26"><defs><style>.b{fill:%23999;stroke-width:0px;}</style></defs><path class="b" d="m0,3.05V0h3.29v3.05H0Zm0,14.13V4.73h3.29v12.45H0Z"/></svg>');
+}
+
+.info-popover {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  @media (max-width: 580px) {
+    top: 0px;
+  right: -15px;
+  }
+}
+
+.info-layer {
+  background-color: #e9e9e9;
+  font-size:14px;
+  padding:15px;
+  border-radius:2px;
+  width:400px;
+  text-align: left;
+  position:absolute;
+  right:5px;
+
+  @media (max-width: 580px) {
+    width:100%;
+    padding:10px;
+    margin: 0 auto;
+    right:-20px;
+    
+  }
+}
+
+.close-button {
+  position:absolute;
+  right:10px;
+  top:10px;
+  cursor:pointer;
+  width:15px;
+  height: 15px;
+  @include background-icon('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.469731 0.393498C0.762624 0.100605 1.2375 0.100605 1.53039 0.393498L13.5304 12.3935C13.8233 12.6864 13.8233 13.1612 13.5304 13.4541C13.2375 13.747 12.7626 13.747 12.4697 13.4541L0.469731 1.45416C0.176838 1.16127 0.176838 0.686391 0.469731 0.393498Z" fill="%238E8E8E"/><path fill-rule="evenodd" clip-rule="evenodd" d="M13.5304 0.393498C13.8233 0.686391 13.8233 1.16127 13.5304 1.45416L1.53033 13.4542C1.23744 13.7471 0.762563 13.7471 0.46967 13.4542C0.176777 13.1613 0.176777 12.6864 0.46967 12.3935L12.4697 0.393498C12.7626 0.100605 13.2375 0.100605 13.5304 0.393498Z" fill="%238E8E8E"/></svg>');
+}
+#tooltip-value {
+  font-size: 14px;
+}
+#tooltip-headline {
+  font-size: 14px;
+}
